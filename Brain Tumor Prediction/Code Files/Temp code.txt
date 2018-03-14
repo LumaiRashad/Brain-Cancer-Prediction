@@ -1,0 +1,19 @@
+prompt = 'Do You Want to Enter New Test?! Y/N ';
+%Question = input(prompt, c);
+%if(Question == 'Y')
+    for i = 1: 100
+        Image_Number = 'Enter Image Number!! In Range(1, 2, 3, 4, 5)';
+        idx = input(Image_Number);
+        if(idx > 5)
+            disp('Please Enter Correct Number!!');
+            Image_Number = 'Enter Image Number!! In Range(1, 2, 3, 4, 5)';
+            idx = input(Image_Number);
+        end
+        Label = Naive_Basyian_Classification_Modified(Training_Features_Extracted_Normal, Training_Features_Extracted_Cancer, Normal_Number, Cancer_Number, Testing_Features_Extracted_Extended(i, :), 1);
+        Request = 'Do You Want to Enter New Image?!! Y/N';
+        ans = input(Request, s);
+        if(ans == 'N')
+            break;
+        end
+    end
+%end
